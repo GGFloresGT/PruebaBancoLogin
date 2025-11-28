@@ -18,16 +18,37 @@ namespace PruebaBancoLogin
             string usuario = txtUsuario.Text.Trim();
             string password = txtPassword.Text.Trim();
 
-          
+
+            if (string.IsNullOrWhiteSpace(usuario) && string.IsNullOrWhiteSpace(password))
+            {
+                lblMensaje.CssClass = "mensaje error";
+                lblMensaje.Text = "Debe ingresar usuario y contraseña";
+                return;
+            }
+
+            if (!string.IsNullOrWhiteSpace(usuario) && string.IsNullOrWhiteSpace(password))
+            {
+                lblMensaje.CssClass = "mensaje error";
+                lblMensaje.Text = "Debe ingresar contraseña";
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(usuario) && !string.IsNullOrWhiteSpace(password))
+            {
+                lblMensaje.CssClass = "mensaje error";
+                lblMensaje.Text = "Debe ingresar usuario";
+                return;
+            }
             if (usuario == "admin" && password == "123")
             {
-                lblMensaje.CssClass = "msg";
-                lblMensaje.Text = "Ingreso exitoso ✔";
+                lblMensaje.CssClass = "mensaje ok";
+                lblMensaje.Text = "Ingreso exitoso";
             }
             else
             {
-                lblMensaje.CssClass = "msg-error";
+                lblMensaje.CssClass = "mensaje error";
                 lblMensaje.Text = "Usuario o contraseña incorrectos";
+                return;
             }
         }
     }

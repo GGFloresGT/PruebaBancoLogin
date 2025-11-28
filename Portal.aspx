@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head runat="server">
-    <title>Portal Intranet Multimarca</title>
+    <title>Prueba Banco Ejercicio 1</title>
 
     <style>
         body {
@@ -162,7 +162,7 @@
         <div class="login-section">
             <div class="login-card">
 
-                <div class="title">Portal Intranet Multimarca</div>
+                <div class="title">Prueba Banco Ejercicio 1</div>
 
                 <div class="campo">
                     <label>Usuario</label>
